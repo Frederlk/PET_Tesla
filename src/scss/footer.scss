@@ -1,15 +1,15 @@
 .footer {
-    background-color: #690102;
-    &__content {
+    background-color: $primary_03;
+    &__container {
         text-align: center;
     }
 
     &__btn {
-        @include adaptiv-value("margin-top", 82, 20, 1);
-        @include adaptiv-value("margin-bottom", 82, 20, 1);
+        @include adaptiveValue("margin-top", 82, 20, 1220, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 82, 20, 1220, 479.98, 1);
         opacity: 0;
         transform: translate(0px, 60%);
-        transition: all 0.8s ease 0s;
+        transition: transform 0.8s ease 0s, opacity 0.8s ease 0s;
         &._active {
             opacity: 1;
             transform: translate(0px, 0px);
@@ -23,31 +23,28 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        li {
-            @include adaptiv-value("margin-bottom", 20, 15, 1);
+    }
 
-            span {
-                margin: 0px 10px;
+    &__item {
+        color: $primary_01;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 20, 15, 767.98, 479.98, 1);
+            &::before {
+                content: "|";
+                margin: 0px rem(10);
             }
         }
-
-        @media (max-width: $md4+px) {
-            li {
-                flex: 1 1 100%;
-                span {
-                    display: none;
-                }
-            }
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
         }
     }
 
     &__link {
         @extend .text;
-        color: #fff;
-        transition: all 0.3s ease 0s;
-        @media (min-width: $md2+px) {
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
             &:hover {
-                color: #0b0b0b;
+                color: $mainColor;
             }
         }
     }

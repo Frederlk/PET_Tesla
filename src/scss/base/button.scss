@@ -3,18 +3,18 @@
 
 .btn {
     display: inline-flex;
-    padding: 0px 62px;
+    padding: rem(5) rem(62);
     justify-content: center;
     align-items: center;
-    height: 90px;
-    background: rgba(255, 255, 255, 0.15);
+    min-height: rem(90);
+    background-color: rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease 0s;
-    border: 1px solid #ffffff;
+    border: rem(1) solid $primary_01;
     @extend .text_b;
-    color: #fff;
-    @media (min-width: 992px) {
+    color: $primary_01;
+    @media (any-hover: hover) {
         &:hover {
-            background: #770302;
+            background-color: $primary_03;
         }
     }
 }

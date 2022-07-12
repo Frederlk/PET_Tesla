@@ -1,20 +1,18 @@
 .page {
-    flex: 1 1 auto;
-
     &__home {
-        @include adaptiv-value("margin-bottom", 105, 50, 1);
     }
 
-    &__info {
-        @include adaptiv-value("margin-bottom", 100, 50, 1);
+    &__info,
+    &__content,
+    &__characteristics {
+        @include adaptiveValue("padding-top", 100, 50, 1220, 767.98, 1);
     }
 
     &__content {
-        @include adaptiv-value("margin-bottom", 100, 50, 1);
     }
 
     &__characteristics {
-        @include adaptiv-value("margin-bottom", 100, 50, 1);
+        @include adaptiveValue("margin-bottom", 100, 50, 1220, 767.98, 1);
     }
 }
 //===================================================================================================================================
@@ -26,8 +24,8 @@
     }
 
     &__container {
-        padding-top: 120px;
-        @include adaptiv-value("padding-bottom", 26, 20, 1);
+        padding-top: rem(120);
+        @include adaptiveValue("padding-bottom", 26, 20);
         position: relative;
         z-index: 10;
         display: flex;
@@ -35,25 +33,25 @@
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             @media screen and (orientation: landscape) {
-                padding-top: 90px;
+                padding-top: rem(90);
             }
         }
     }
 
     &__body {
         flex: 1 1 auto;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             text-align: center;
         }
     }
 
     &__title {
         @extend .title;
-        margin: 0px 0px 30px 0px;
+        margin-bottom: rem(30);
         transform: translate(60%, 0px);
-        transition: all 0.5s ease 0s;
+        transition: opacity 0.5s ease 0s, transform 0.5s ease 0s;
         opacity: 0;
         &._active {
             transform: translate(0px, 0px);
@@ -63,13 +61,13 @@
 
     &__text {
         @extend .text;
-        max-width: 284px;
-        margin-bottom: 25px;
-        @media (max-width: $md3+px) {
-            max-width: 300px;
-            margin: 0px auto 25px auto;
+        max-width: rem(284);
+        margin-bottom: rem(25);
+        @media (max-width: $mobile) {
+            max-width: rem(300);
+            margin: 0px auto rem(24) auto;
         }
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             max-width: none;
         }
         transform: translate(-60%, 0px);
@@ -82,9 +80,9 @@
     }
 
     &__btn {
-        margin: 0px 0px 25px 0px;
+        margin-bottom: rem(25);
         transition: all 0.5s ease 0.8s;
-        @media (max-width: $md4+px) {
+        @media (max-width: $mobileSmall) {
             display: flex;
         }
     }
@@ -92,22 +90,19 @@
     &__pagination {
         display: flex;
         align-items: center;
-        @media (max-width: $md3+px) {
+        gap: rem(20);
+        @media (max-width: $mobile) {
             justify-content: center;
         }
         .swiper-pagination-bullet {
-            width: 15px;
-            height: 15px;
-            background-color: #0b0b0b;
+            width: rem(15);
+            height: rem(15);
+            background-color: $mainColor;
             border-radius: 50%;
-            margin: 0px 20px 0px 0px;
             transition: all 0.8s ease 0s;
-            &:last-child {
-                margin: 0px 0px 0px 0px;
-            }
         }
         .swiper-pagination-bullet-active {
-            background-color: #fff;
+            background-color: $primary_01;
         }
     }
 
@@ -139,7 +134,7 @@
     }
 }
 
-//</ОСНОВНОЙ БЛОК>====================================================================================================
+//========================================================================================================================================================
 
 .info {
     &__container {
@@ -147,11 +142,11 @@
 
     &__row {
         overflow: hidden;
-        @include adaptiv-value("margin-bottom", 65, 5, 1);
+        @include adaptiveValue("margin-bottom", 65, 5, 1220, 479.98, 1);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -162,17 +157,17 @@
         display: flex;
         height: 100%;
         flex-direction: column;
-        @include adaptiv-value("padding-left", 32, 15, 1);
-        @include adaptiv-value("padding-right", 32, 15, 1);
-        margin-bottom: 35px;
+        @include adaptiveValue("padding-left", 32, 15, 1220, 479.98, 1);
+        @include adaptiveValue("padding-right", 32, 15, 1220, 479.98, 1);
+        margin-bottom: rem(35);
         @extend .text;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
         }
         &:first-child {
             .info__stat {
                 span {
-                    transform: translate(-5px, 0px);
-                    @include adaptiv-value("padding-bottom", 16, 8, 1);
+                    transform: translate(rem(-5), 0px);
+                    @include adaptiveValue("padding-bottom", 16, 8, 1220, 479.98, 1);
                 }
             }
         }
@@ -182,7 +177,7 @@
                 &::after {
                     position: absolute;
                     top: 0;
-                    right: 35px;
+                    right: rem(35);
                     content: "+";
                 }
             }
@@ -195,12 +190,13 @@
 
     &__stat {
         display: flex;
-        margin: 19px 0px 7px 0px;
+        margin-top: rem(20);
+        margin-bottom: rem(7);
         align-items: flex-end;
         span {
-            padding: 0px 0px 0px 8px;
-            @include adaptiv-value("padding-bottom", 16, 8, 1);
-            font-size: 24px;
+            padding-left: rem(8);
+            @include adaptiveValue("padding-bottom", 16, 8, 1220, 479.98, 1);
+            font-size: rem(24);
         }
     }
 
@@ -209,14 +205,14 @@
     }
 
     &__label-botton {
-        color: #b70021;
+        color: $primary_02;
     }
 
     &__image {
-        padding: 0px 0px 33.34% 0px;
-        min-height: 200px;
-        @media (max-width: $md3+px) {
-            padding: 0px 0px 53.55% 0px;
+        padding-bottom: 33.34%;
+        min-height: rem(200);
+        @media (max-width: $mobile) {
+            padding-bottom: 53.55%;
         }
         transform: scale(0.5);
         opacity: 0;
@@ -236,9 +232,9 @@
 
     &__row {
         display: flex;
-        margin: 0px -28px;
-        @include adaptiv-value("margin-bottom", 100, 30, 1);
-        @media (max-width: $md3+px) {
+        margin: 0px rem(-28);
+        @include adaptiveValue("margin-bottom", 100, 30, 1220, 479.98, 1);
+        @media (max-width: $mobile) {
             flex-wrap: wrap;
             margin-right: 0;
             margin-left: 0;
@@ -256,7 +252,7 @@
                 &._active {
                     transform: translate(0px, 0px);
                 }
-                @media (max-width: $md3+px) {
+                @media (max-width: $mobile) {
                     transform: translate(120%, 0);
                     &:first-child {
                         transform: translate(-120%, 0);
@@ -265,11 +261,11 @@
             }
             .content__title {
                 text-align: right;
-                @media (max-width: $md3+px) {
+                @media (max-width: $mobile) {
                     display: none;
                 }
             }
-            @media (max-width: $md3+px) {
+            @media (max-width: $mobile) {
                 .content__br {
                     opacity: 1;
                     visibility: visible;
@@ -280,12 +276,12 @@
     }
 
     &__column {
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             flex: 1 1 100%;
             padding: 0;
         }
         flex: 0 1 50%;
-        padding: 0px 28px;
+        padding: 0px rem(28);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -304,30 +300,30 @@
     }
 
     &__title {
-        color: #b70021;
+        color: $primary_02;
         @extend .subtitle;
     }
 
     &__text {
         @extend .text;
-        margin: 25px 0px;
+        margin: rem(25) 0px;
     }
 
     &__br {
         @extend .subtitle;
-        color: #b70021;
+        color: $primary_02;
         opacity: 0;
         visibility: hidden;
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             display: none;
         }
     }
 
     &__image {
-        padding: 0px 0px 69.93% 0px;
-        min-height: 200px;
-        @media (max-width: $md3+px) {
-            padding: 0px 0px 53.55% 0px;
+        padding-bottom: 69.93%;
+        min-height: rem(200);
+        @media (max-width: $mobile) {
+            padding-bottom: 53.55%;
         }
     }
 }
@@ -339,12 +335,12 @@
     }
 
     &__image {
-        padding: 0px 0px 50% 0px;
-        min-height: 200px;
+        padding-bottom: 50%;
+        min-height: rem(200);
         transform: scale(0.5);
         opacity: 0;
         transition: all 0.8s ease 0s;
-        @include adaptiv-value("margin-bottom", 100, 30, 1);
+        @include adaptiveValue("margin-bottom", 100, 30, 1220, 479.98, 1);
         &._active {
             transform: scale(1);
             opacity: 1;
@@ -353,14 +349,14 @@
 
     &__row {
         display: flex;
-        margin: 0px -28px;
-        @media (max-width: $md3+px) {
+        margin: 0px rem(-28);
+        @media (max-width: $mobile) {
             flex-wrap: wrap;
         }
     }
 
     &__column {
-        padding: 0px 28px;
+        padding: 0px rem(28);
         flex: 0 1 50%;
         transition: all 0.5s ease 0s;
         opacity: 0;
@@ -372,13 +368,11 @@
             opacity: 1;
             transform: translate(0px, 0px);
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             flex: 1 1 100%;
-            margin: 0px 0px 25px 0px;
             transform: translate(0, 60%);
-            &:last-child {
-                transform: translate(0, 60%);
-                margin: 0px 0px 0px 0px;
+            &:not(:last-child) {
+                margin-bottom: rem(25);
                 &._active {
                     transform: translate(0px, 0px);
                 }
@@ -388,21 +382,21 @@
 
     &__number {
         @extend .text;
-        color: #b70021;
+        color: $primary_02;
     }
 
     &__text {
         @extend .text;
-        margin: 0px 17px 0px 0px;
+        margin-left: rem(18);
         display: flex;
         justify-content: flex-end;
         p {
-            flex: 0 1 450px;
-            @media (max-width: $md3+px) {
+            flex: 0 1 rem(450);
+            @media (max-width: $mobile) {
                 flex: 1 1 auto;
             }
         }
-        @media (max-width: $md3+px) {
+        @media (max-width: $mobile) {
             margin: 0;
         }
     }
