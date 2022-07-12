@@ -1,0 +1,54 @@
+.footer {
+    background-color: #690102;
+    &__content {
+        text-align: center;
+    }
+
+    &__btn {
+        @include adaptiv-value("margin-top", 82, 20, 1);
+        @include adaptiv-value("margin-bottom", 82, 20, 1);
+        opacity: 0;
+        transform: translate(0px, 60%);
+        transition: all 0.8s ease 0s;
+        &._active {
+            opacity: 1;
+            transform: translate(0px, 0px);
+        }
+    }
+
+    &__row {
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li {
+            @include adaptiv-value("margin-bottom", 20, 15, 1);
+
+            span {
+                margin: 0px 10px;
+            }
+        }
+
+        @media (max-width: $md4+px) {
+            li {
+                flex: 1 1 100%;
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__link {
+        @extend .text;
+        color: #fff;
+        transition: all 0.3s ease 0s;
+        @media (min-width: $md2+px) {
+            &:hover {
+                color: #0b0b0b;
+            }
+        }
+    }
+}

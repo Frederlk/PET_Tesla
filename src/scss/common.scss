@@ -1,0 +1,27 @@
+.title {
+    @include adaptiv-font(96, 56, 1);
+    line-height: 112 / 96 * 100%;
+    font-family: "Roboto";
+}
+
+.subtitle {
+    line-height: 42 / 36 * 100%;
+    font-size: 36px;
+}
+.text {
+    line-height: 28 / 24 * 100%;
+    &_b {
+        font-weight: 700;
+    }
+}
+
+.anim-show {
+    transform: translate(0px, 120%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    &._active,
+    ._active .anim-show {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}

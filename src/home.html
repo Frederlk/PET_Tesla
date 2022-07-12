@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.htm',{ "title":"Главная" })
+
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.htm',{})
+            <main class="page">
+                <section class="page__home home">
+                    <div class="home__content">
+                        <div class="home__container _container">
+                            <div class="home__body">
+                                <h1 class="home__title _anim-items">Roadster</h1>
+                                <div class="home__text _anim-items">
+                                    Самый быстрый автомобиль в мире, с рекордным ускорением, дальностью и производительностью.
+                                </div>
+                                <a href="#" class="home__btn btn _anim-items anim-show">Хочу тест драйв</a>
+                            </div>
+                            <div class="home__pagination"></div>
+                        </div>
+                        <div class="home__slider _swiper">
+                            <div class="home__slide _ibg">
+                                <img src="img/1.jpg" alt="" />
+                            </div>
+                            <div class="home__slide _ibg">
+                                <img src="img/2.jpg" alt="" />
+                            </div>
+                            <div class="home__slide _ibg">
+                                <img src="img/3.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__info info">
+                    <div class="info__container _container">
+                        <div class="info__row">
+                            <div class="info__column _anim-items _anim-no-hide anim-show">
+                                <div class="info__label-top">Двигатель</div>
+                                <div class="info__stat">
+                                    <div class="info__number" id="acceleration">0</div>
+                                    <span>сек</span>
+                                </div>
+                                <div class="info__label-botton">разгон до 100 км</div>
+                            </div>
+                            <div class="info__column _anim-items _anim-no-hide anim-show">
+                                <div class="info__label-top">Батарея</div>
+                                <div class="info__stat">
+                                    <div class="info__number" id="battery">0</div>
+                                    <span>км</span>
+                                </div>
+                                <div class="info__label-botton">запас хода</div>
+                            </div>
+                            <div class="info__column _anim-items _anim-no-hide anim-show">
+                                <div class="info__label-top">Скорость</div>
+                                <div class="info__stat">
+                                    <div class="info__number" id="speed">0</div>
+                                    <span>км/ч</span>
+                                </div>
+                                <div class="info__label-botton">макс скорость</div>
+                            </div>
+                        </div>
+                        <div class="info__image _ibg _anim-items _anim-no-hide">
+                            <img src="img/4.jpg" alt="" />
+                        </div>
+                    </div>
+                </section>
+                <section class="page__content content">
+                    <div class="content__container _container">
+                        <div class="content__row">
+                            <div class="content__column _anim-items _anim-no-hide">
+                                <div class="content__title">Скорость</div>
+                                <div class="content__text">
+                                    <p>Самый</p>
+                                    <p>быстроразгоняющийся</p>
+                                    <p>серийный автомобиль</p>
+                                    <p>из когда-либо созданных</p>
+                                </div>
+                                <div class="content__br">Скорость</div>
+                            </div>
+                            <div class="content__column _anim-items _anim-no-hide">
+                                <div class="content__image _ibg">
+                                    <img src="img/5.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content__row content__row_sec">
+                            <div class="content__column _anim-items _anim-no-hide">
+                                <div class="content__br">Преимущества</div>
+                                <div class="content__text">
+                                    <p>Датчик дождя</p>
+                                    <p>Датчик света</p>
+                                    <p>Автопилот</p>
+                                    <p>Навигационная система</p>
+                                    <p>Обогрев зеркал</p>
+                                    <p>Усилитель руля</p>
+                                    <p>Панорамная крыша</p>
+                                    <p>Ксеноновые фары</p>
+                                </div>
+                                <div class="content__title">Преимущества</div>
+                            </div>
+                            <div class="content__column _anim-items _anim-no-hide">
+                                <div class="content__image _ibg">
+                                    <img src="img/6.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="page__characteristics characteristics">
+                    <div class="characteristics__container _container">
+                        <div class="characteristics__image _ibg _anim-items _anim-no-hide">
+                            <img src="img/7.jpg" alt="" />
+                        </div>
+                        <div class="characteristics__row">
+                            <div class="characteristics__column _anim-items _anim-no-hide">
+                                <div class="characteristics__number">01</div>
+                                <div class="characteristics__text">
+                                    <p>
+                                        Новый родстер был разработан бывшим дизайнером Mazda Францем фон Хольцхаузеном. <br />
+                                        Имеет съёмную стеклянную крышу и кузов с двумя передними сиденьями плюс два небольших
+                                        сиденья сзади.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="characteristics__column _anim-items _anim-no-hide">
+                                <div class="characteristics__number">02</div>
+                                <div class="characteristics__text">
+                                    <p>
+                                        Родстер имеет три электродвигателя, один спереди и два сзади,<br />
+                                        Они обеспечивают полный привод, а также систему адресного распределения крутящего момента
+                                        для лучшего прохождения поворотов.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.htm',{})
+        </div>
+        @@include('html/_js.htm',{})
+    </body>
+</html>
