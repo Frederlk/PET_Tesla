@@ -7,13 +7,6 @@
     &__btn {
         @include adaptiveValue("margin-top", 82, 20, 1220, 479.98, 1);
         @include adaptiveValue("margin-bottom", 82, 20, 1220, 479.98, 1);
-        opacity: 0;
-        transform: translate(0px, 60%);
-        transition: transform 0.8s ease 0s, opacity 0.8s ease 0s;
-        &._active {
-            opacity: 1;
-            transform: translate(0px, 0px);
-        }
     }
 
     &__row {

@@ -5,34 +5,22 @@
     z-index: 20;
     top: 0;
     left: 0;
-    @include adaptiveValue("margin-top", 33, 10, 991.98, 479.98, 1);
     background-color: transparent;
     transition: all 0.8s ease 0s;
-    &::before {
-        content: "";
-        position: fixed;
-        width: 100%;
-        height: 100px;
-        z-index: 55;
-        background-color: $mainColor;
-        top: 0;
-        left: 0;
-    }
-
+    @include adaptiveValue("margin-top", 20, 0, 1190, 991.98, 1);
     &._header-scroll {
-        margin: 0px;
-        padding: rem(10) 0px;
+        margin-top: 0px;
         background-color: rgba(10, 10, 10, 0.8);
         box-shadow: 0 0 rem(20) $mainColor;
-        @media (max-width: $mobile) {
-            padding: rem(5) 0px;
-        }
     }
-    &__content {
+
+    &__container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
+        padding-top: rem(10);
+        padding-bottom: rem(10);
     }
 
     &__logo {
@@ -42,60 +30,80 @@
         img {
             max-width: 100%;
         }
-        @media (max-width: $mobileSmall) and (max-height: $mobileSmall) {
+        @media (max-width: $mobileSmall) {
             flex: 0 0 rem(200);
         }
     }
 
     &__menu {
     }
+
+    &__icon {
+    }
 }
 
 .menu {
-    &__icon {
-    }
-
     &__body {
-        @include adaptivValue("padding-top", 160, 100, 1220, 479.98, 1);
+        @include adaptiveValue("padding-top", 160, 100, 1190, 479.98, 1);
+        padding-right: rem(15);
+        padding-left: rem(15);
+        padding-bottom: rem(30);
         position: fixed;
-        z-index: 10;
+        z-index: 5;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: $mainColor;
-        opacity: 0;
         overflow: auto;
+        opacity: 0;
         visibility: hidden;
         transition: visibility 0.3s ease 0s, opacity 0.3s ease 0s;
+        &::before {
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: rem(60);
+            @include adaptiveValue("padding-top", 30, 10, 1190, 991.98, 1);
+            box-sizing: content-box;
+            padding-bottom: rem(10);
+            z-index: 10;
+            background-color: $mainColor;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: visibility 0.3s ease 0s, opacity 0.3s ease 0s;
+            .menu-open & {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
         .menu-open & {
             visibility: visible;
             opacity: 1;
         }
     }
 
-    &__container {
-        padding: 0px rem(15);
-        margin: 0 auto;
+    &__list {
         @media (min-width: $mobileSmall) {
+            max-width: rem(1190);
+            margin: 0px auto;
             display: flex;
-            max-width: rem(1220);
+            flex-direction: column;
+            align-items: flex-start;
         }
     }
 
-    &__list {
-        li {
-            @include adaptivValue("padding-bottom", 14, 10, 767.98, 479.98, 1);
-            @include adaptivValue("margin-bottom", 30, 15, 767.98, 479.98, 1);
-            border-bottom: rem(3) solid $primary_02;
-            transition: border-bottom 0.3s ease 0s;
-            @media (any-hover: hover) {
-                &:hover {
-                    border-bottom: rem(3) solid $primary_01;
-                }
-            }
-            @media (min-width: $mobileSmall) {
-                margin-left: rem(5);
+    &__item {
+        @include adaptiveValue("padding-bottom", 15, 10, 767.98, 479.98, 1);
+        @include adaptiveValue("margin-bottom", 30, 20, 767.98, 479.98, 1);
+        border-bottom: rem(3) solid $primary_02;
+        transition: border-bottom 0.3s ease 0s;
+        @include adaptiveValue("min-width", 370, 290, 1190, 767.98, 1);
+        @media (any-hover: hover) {
+            &:hover {
+                border-bottom: rem(3) solid $primary_01;
             }
         }
     }
@@ -103,7 +111,8 @@
     &__link {
         span {
             font-weight: 700;
-            line-height: math.div(48, 28);
+            @include adaptiveValue("font-size", 48, 28, 1190, 479.98, 1);
+            line-height: math.div(56, 48);
             color: $primary_01;
             @media (min-width: $mobileSmall) {
                 padding-right: rem(40);
@@ -115,59 +124,58 @@
 //====================================================================================================
 
 .icon-menu {
-    display: none;
-    @media (max-width: $mobile) {
-        display: block;
-        position: relative;
-        width: rem(60);
-        height: rem(60);
-        cursor: pointer;
-        z-index: 5;
-        background-color: rgba(255, 255, 255, 0.1);
-        border: 1px solid $primary_01;
-        span,
-        &::before,
-        &::after {
-            content: "";
-            transition: all 0.3s ease 0s;
-            right: 0;
-            position: absolute;
-            width: 100%;
-            height: rem(2);
-            background-color: #000;
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                background-color: $primary_03;
-                .menu-open & {
-                    background: none;
-                    span {
-                        background-color: $primary_03;
-                    }
+    display: block;
+    position: relative;
+    width: rem(60);
+    height: rem(60);
+    cursor: pointer;
+    z-index: 15;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: rem(1) solid $primary_01;
+    transition: background-color 0.3s ease 0s;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    span,
+    &::before,
+    &::after {
+        content: "";
+        transition: all 0.3s ease 0s;
+        right: rem(12);
+        position: absolute;
+        width: rem(36);
+        height: rem(2);
+        background-color: $primary_01;
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $primary_03;
+            .menu-open & {
+                span {
+                    background-color: $primary_03;
                 }
             }
         }
+    }
+    &::before {
+        top: rem(17);
+    }
+    &::after {
+        bottom: rem(17);
+    }
+    span {
+        top: calc(50% - rem(1));
+    }
+    .menu-open & {
+        span {
+            opacity: 0;
+        }
         &::before {
-            top: 0;
+            top: calc(50% - rem(1));
+            transform: rotate(-45deg);
         }
         &::after {
-            bottom: 0;
-        }
-        span {
-            top: calc(50% - rem(1));
-        }
-        .menu-open & {
-            span {
-                width: 0;
-            }
-            &::before {
-                top: calc(50% - rem(1));
-                transform: rotate(-45deg);
-            }
-            &::after {
-                bottom: calc(50% - rem(1));
-                transform: rotate(45deg);
-            }
+            bottom: calc(50% - rem(1));
+            transform: rotate(45deg);
         }
     }
 }

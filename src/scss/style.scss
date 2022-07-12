@@ -31,7 +31,7 @@ $minWidth: 320;
 // Ширина полотна (макета)
 $maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1220;
+$maxWidthContainer: 1190;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 30;
@@ -54,7 +54,11 @@ $responsiveType: 1;
 @import "base/null";
 
 body {
-    background-color: #0b0b0b;
+    overflow-y: scroll;
+    overflow-y: overlay;
+    color: $primary_01;
+    background-color: $mainColor;
+    @include scrollbars(rem(10), $primary_01, transparent);
     // Скролл заблокирован
     .lock & {
         overflow: hidden;
