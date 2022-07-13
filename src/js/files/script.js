@@ -3,8 +3,11 @@ import { CountUp } from "countup.js";
 // Подключение списка активных модулей
 
 if (document.querySelector(".info__video")) {
-    const videoFile = document.getElementById("video-file");
-    const videoWrap = document.getElementById("video-wrap");
+    const sourceWemb = document.getElementById("source-webm"),
+        sourceMp4 = document.getElementById("source-mp4"),
+        videoFile = document.getElementById("video-file"),
+        videoWrap = document.getElementById("video-wrap");
+
     let observer = new MutationObserver(function (mutations) {
         for (let mutation of mutations) {
             if (mutation.type === "attributes") {
@@ -18,6 +21,33 @@ if (document.querySelector(".info__video")) {
     });
 
     observer.observe(videoWrap, { attributes: true });
+
+    const updateVideo = (linkMp4, linkWebm) => {
+        if (!sourceMp4.src.includes(linkMp4)) {
+            videoFile.pause();
+            sourceMp4.src = linkMp4;
+            sourceWemb.src = linkWebm;
+            videoFile.load();
+            videoFile.play();
+        } else {
+            return;
+        }
+    };
+
+    if (window.innerWidth <= 480) {
+        videoFile.pause();
+        sourceMp4.src = "img/video/tesla-mobile.mp4";
+        sourceWemb.src = "img/video/tesla-mobile.webm";
+        videoFile.load();
+    }
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth <= 480) {
+            updateVideo("img/video/tesla-mobile.mp4", "img/video/tesla-mobile.webm");
+        } else {
+            updateVideo("img/video/tesla.mp4", "img/video/tesla.webm");
+        }
+    });
 }
 
 if (document.getElementById("count-up")) {

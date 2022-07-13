@@ -115,15 +115,16 @@
 //========================================================================================================================================================
 
 .info {
+    margin-top: rem(5);
     &__container {
     }
 
     &__row {
-        overflow: hidden;
-        @include adaptiveValue("margin-bottom", 65, 5, 1220, 479.98, 1);
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+        gap: rem(35);
+        @include adaptiveValue("margin-bottom", 100, 50, 1220, 767.98, 1);
         @media (max-width: $mobile) {
             flex-wrap: wrap;
             justify-content: center;
@@ -131,13 +132,11 @@
     }
 
     &__column {
+        flex: 0 1 rem(260);
         align-items: center;
         display: flex;
         height: 100%;
         flex-direction: column;
-        @include adaptiveValue("padding-left", 32, 15, 1220, 479.98, 1);
-        @include adaptiveValue("padding-right", 32, 15, 1220, 479.98, 1);
-        margin-bottom: rem(35);
         @extend .text;
         @media (max-width: $mobile) {
         }
@@ -168,7 +167,7 @@
 
     &__stat {
         display: flex;
-        margin-top: rem(20);
+        @include adaptiveValue("margin-top", 20, 10, 991.98, 479.98, 1);
         margin-bottom: rem(7);
         align-items: flex-end;
         span {
@@ -185,13 +184,12 @@
     &__label-botton {
         color: $primary_02;
     }
-    .info {
-        &__video-wrap {
-            @extend %responsiveVideo;
-            @include adaptiveValue("height", 400, 250, 1190, 767.98, 1);
-        }
 
-        &__video {
+    &__video-wrap {
+        @extend %responsiveVideo;
+        @include adaptiveValue("height", 400, 250, 1190, 767, 1);
+        @media (max-width: $pc) {
+            margin: 0px rem(-15);
         }
     }
 }
