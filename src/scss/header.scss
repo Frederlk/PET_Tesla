@@ -135,6 +135,10 @@
     transition: background-color 0.3s ease 0s;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent;
+    @media (max-width: $mobileSmall) {
+        width: rem(50);
+        height: rem(50);
+    }
     span,
     &::before,
     &::after {
@@ -145,6 +149,9 @@
         width: rem(36);
         height: rem(2);
         background-color: $primary_01;
+        @media (max-width: $mobileSmall) {
+            right: rem(6);
+        }
     }
     @media (any-hover: hover) {
         &:hover {
@@ -158,9 +165,15 @@
     }
     &::before {
         top: rem(17);
+        @media (max-width: $mobileSmall) {
+            top: rem(14);
+        }
     }
     &::after {
         bottom: rem(17);
+        @media (max-width: $mobileSmall) {
+            bottom: rem(14);
+        }
     }
     span {
         top: calc(50% - rem(1));

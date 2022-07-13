@@ -21,3 +21,19 @@
         object-fit: contain;
     }
 }
+
+%responsiveVideo {
+    position: relative;
+    overflow: hidden;
+    video,
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+}

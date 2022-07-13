@@ -5,6 +5,7 @@
     }
 
     &__btn {
+        min-width: rem(290);
         @include adaptiveValue("margin-top", 82, 20, 1220, 479.98, 1);
         @include adaptiveValue("margin-bottom", 82, 20, 1220, 479.98, 1);
     }
@@ -22,7 +23,7 @@
         color: $primary_01;
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 20, 15, 767.98, 479.98, 1);
-            &::before {
+            &::after {
                 content: "|";
                 margin: 0px rem(10);
             }

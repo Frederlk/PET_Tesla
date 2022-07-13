@@ -3,12 +3,12 @@
 
 .btn {
     display: inline-flex;
-    padding: rem(5) rem(62);
+    padding: rem(5) rem(30);
     justify-content: center;
     align-items: center;
     min-height: rem(90);
     background-color: rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s;
     border: rem(1) solid $primary_01;
     @extend .text_b;
     color: $primary_01;

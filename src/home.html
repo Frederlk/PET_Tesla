@@ -19,13 +19,13 @@
                     </div>
                     <div class="home__slider swiper">
                         <div class="home__wrapper swiper-wrapper">
-                            <div class="home__slide-ibg swiper-slide">
+                            <div data-fullscreen class="home__slide-ibg swiper-slide">
                                 <img src="@img/1.jpg" alt="01" />
                             </div>
-                            <div class="home__slide-ibg swiper-slide">
+                            <div data-fullscreen class="home__slide-ibg swiper-slide">
                                 <img src="@img/2.jpg" alt="02" />
                             </div>
-                            <div class="home__slide-ibg swiper-slide">
+                            <div data-fullscreen class="home__slide-ibg swiper-slide">
                                 <img src="@img/3.jpg" alt="03" />
                             </div>
                         </div>
@@ -34,8 +34,8 @@
 
                 <section class="page__info info">
                     <div class="info__container">
-                        <div class="info__row">
-                            <div data-watch class="info__column">
+                        <div data-watch class="info__row" id="count-up">
+                            <div class="info__column">
                                 <div class="info__label-top">Двигатель</div>
                                 <div class="info__stat">
                                     <div class="info__number" id="acceleration">0</div>
@@ -43,7 +43,7 @@
                                 </div>
                                 <h4 class="info__label-botton">разгон до 100 км</h4>
                             </div>
-                            <div data-watch class="info__column">
+                            <div class="info__column">
                                 <div class="info__label-top">Батарея</div>
                                 <div class="info__stat">
                                     <div class="info__number" id="battery">0</div>
@@ -51,7 +51,7 @@
                                 </div>
                                 <h4 class="info__label-botton">запас хода</h4>
                             </div>
-                            <div data-watch class="info__column">
+                            <div class="info__column">
                                 <div class="info__label-top">Скорость</div>
                                 <div class="info__stat">
                                     <div class="info__number" id="speed">0</div>
@@ -60,8 +60,11 @@
                                 <h4 class="info__label-botton">макс скорость</h4>
                             </div>
                         </div>
-                        <div data-watch class="info__image-ibg">
-                            <img src="@img/4.jpg" alt="04" />
+                        <div data-watch class="info__video-wrap" id="video-wrap">
+                            <video class="info__video" preload muted loop id="video-file">
+                                <source type="video/webm" src="@img/video/tesla.webm" />
+                                <source type="video/mp4" src="@img/video/tesla.mp4" />
+                            </video>
                         </div>
                     </div>
                 </section>
