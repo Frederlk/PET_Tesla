@@ -54,8 +54,6 @@ $responsiveType: 1;
 @import "base/null";
 
 body {
-    overflow-y: scroll;
-    overflow-y: overlay;
     color: $primary_01;
     background-color: $mainColor;
     @include scrollbars(rem(10), $primary_01, transparent);

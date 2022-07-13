@@ -16,6 +16,7 @@ export function isWebp() {
         document.documentElement.classList.add(className);
     });
 }
+
 /* Проверка мобильного браузера */
 export let isMobile = {
     Android: function () {
@@ -37,6 +38,10 @@ export let isMobile = {
         return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
     },
 };
+export function addTouchClass() {
+    // Добавление класса _touch для HTML если браузер мобильный
+    if (isMobile.any()) document.documentElement.classList.add("touch");
+}
 // Добавление loaded для HTML после полной загрузки страницы
 export function addLoadedClass() {
     window.addEventListener("load", function () {
