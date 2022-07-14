@@ -1,12 +1,12 @@
 .footer {
     background-color: $primary_03;
+    @include adaptiveValue("padding-top", 82, 30, 1220, 479.98, 1);
     &__container {
         text-align: center;
     }
 
     &__btn {
         min-width: rem(290);
-        @include adaptiveValue("margin-top", 82, 20, 1220, 479.98, 1);
         @include adaptiveValue("margin-bottom", 82, 20, 1220, 479.98, 1);
     }
 
@@ -14,22 +14,26 @@
     }
 
     &__list {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        @media (min-width: $mobileSmall) {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
     }
 
     &__item {
         color: $primary_01;
+        @include adaptiveValue("margin-bottom", 20, 15, 767.98, 479.98, 1);
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 20, 15, 767.98, 479.98, 1);
-            &::after {
-                content: "|";
-                margin: 0px rem(10);
+            @media (min-width: $mobileSmall) {
+                &::after {
+                    content: "|";
+                    margin: 0px rem(10);
+                }
             }
         }
         @media (max-width: $mobileSmall) {
-            flex: 1 1 100%;
+            text-align: center;
         }
     }
 
