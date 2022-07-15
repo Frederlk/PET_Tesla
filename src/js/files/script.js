@@ -36,16 +36,16 @@ if (document.querySelector(".info__video")) {
 
     if (window.innerWidth <= 480) {
         videoFile.pause();
-        sourceMp4.src = "img/video/tesla-mobile.mp4";
-        sourceWemb.src = "img/video/tesla-mobile.webm";
+        sourceMp4.src = "videos/tesla-mobile.mp4";
+        sourceWemb.src = "videos/tesla-mobile.webm";
         videoFile.load();
     }
 
     window.addEventListener("resize", function () {
         if (window.innerWidth <= 480) {
-            updateVideo("img/video/tesla-mobile.mp4", "img/video/tesla-mobile.webm");
+            updateVideo("videos/tesla-mobile.mp4", "videos/tesla-mobile.webm");
         } else {
-            updateVideo("img/video/tesla.mp4", "img/video/tesla.webm");
+            updateVideo("videos/tesla.mp4", "videos/tesla.webm");
         }
     });
 }
