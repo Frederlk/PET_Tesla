@@ -112,11 +112,15 @@ class ScrollWatcher {
         if (entry.isIntersecting) {
             // Видим объект
             // Добавляем класс
-            !targetElement.classList.contains("_watcher-view") ? targetElement.classList.add("_watcher-view") : null;
+            !targetElement.classList.contains("_watcher-view")
+                ? targetElement.classList.add("_watcher-view")
+                : null;
         } else {
             // Не видим объект
             // Убираем класс
-            targetElement.classList.contains("_watcher-view") ? targetElement.classList.remove("_watcher-view") : null;
+            targetElement.classList.contains("_watcher-view")
+                ? targetElement.classList.remove("_watcher-view")
+                : null;
         }
     }
     // Функция отключения слежения за объектом
@@ -141,18 +145,6 @@ class ScrollWatcher {
                 },
             })
         );
-
-        /*
-		// Выбираем нужные объекты
-		if (targetElement.dataset.watch === 'some value') {
-			// пишем уникальную специфику
-		}
-		if (entry.isIntersecting) {
-			// Видим объект
-		} else {
-			// Не видим объект
-		}
-		*/
     }
 }
 // Запускаем и добавляем в объект модулей
