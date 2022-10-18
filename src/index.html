@@ -7,11 +7,12 @@
             @@include('html/_header.htm',{})
             <main class="page">
                 <section class="page__home home">
-                    <div class="home__container">
+                    <div data-fullscreen="" class="home__container">
                         <div class="home__body">
                             <h1 data-watch data-watch-once class="home__title">Roadster</h1>
                             <p data-watch data-watch-once class="home__text">
-                                Самый быстрый автомобиль в мире, с рекордным ускорением, дальностью и производительностью.
+                                Самый быстрый автомобиль в мире, с рекордным ускорением, дальностью и
+                                производительностью.
                             </p>
                             <a data-watch data-watch-once href="#" class="home__btn btn">Хочу тест драйв</a>
                         </div>
@@ -19,13 +20,13 @@
                     </div>
                     <div class="home__slider swiper">
                         <div class="home__wrapper swiper-wrapper">
-                            <div data-fullscreen class="home__slide-ibg swiper-slide">
+                            <div data-fullscreen="" class="home__slide-ibg swiper-slide">
                                 <img src="@img/1.jpg" alt="01" />
                             </div>
-                            <div data-fullscreen class="home__slide-ibg swiper-slide">
+                            <div data-fullscreen="" class="home__slide-ibg swiper-slide">
                                 <img src="@img/2.jpg" alt="02" />
                             </div>
-                            <div data-fullscreen class="home__slide-ibg swiper-slide">
+                            <div data-fullscreen="" class="home__slide-ibg swiper-slide">
                                 <img src="@img/3.jpg" alt="03" />
                             </div>
                         </div>
@@ -34,7 +35,13 @@
 
                 <section class="page__info info">
                     <div class="info__container">
-                        <div class="info__row" data-watch data-watch-once data-watch-threshold="0.2" id="count-up">
+                        <div
+                            class="info__row"
+                            data-watch
+                            data-watch-once
+                            data-watch-threshold="0.2"
+                            id="count-up"
+                        >
                             <div class="info__column">
                                 <div class="info__label-top">Двигатель</div>
                                 <div class="info__stat">
@@ -60,7 +67,13 @@
                                 <h4 class="info__label-botton">макс скорость</h4>
                             </div>
                         </div>
-                        <div class="info__video-wrap" data-watch data-watch-once data-watch-threshold="0.2" id="video-wrap">
+                        <div
+                            class="info__video-wrap"
+                            data-watch
+                            data-watch-once
+                            data-watch-threshold="0.2"
+                            id="video-wrap"
+                        >
                             <video class="info__video" preload muted loop id="video-file">
                                 <source type="video/webm" id="source-webm" src="videos/tesla.webm" />
                                 <source type="video/mp4" id="source-mp4" src="videos/tesla.mp4" />
@@ -112,24 +125,35 @@
 
                 <section class="page__characteristics characteristics">
                     <div class="characteristics__container">
-                        <div data-watch data-watch-once data-watch-threshold="0.2" class="characteristics__image-ibg">
+                        <div
+                            data-watch
+                            data-watch-once
+                            data-watch-threshold="0.2"
+                            class="characteristics__image-ibg"
+                        >
                             <img src="@img/7.jpg" alt="07" />
                         </div>
-                        <div data-watch data-watch-once data-watch-threshold="0.2" class="characteristics__row">
+                        <div
+                            data-watch
+                            data-watch-once
+                            data-watch-threshold="0.2"
+                            class="characteristics__row"
+                        >
                             <div class="characteristics__column">
                                 <div class="characteristics__number">01</div>
                                 <p class="characteristics__text">
-                                    Новый родстер был разработан бывшим дизайнером Mazda Францем фон Хольцхаузеном. <br />
-                                    Имеет съёмную стеклянную крышу и кузов с двумя передними сиденьями плюс два небольших сиденья
-                                    сзади.
+                                    Новый родстер был разработан бывшим дизайнером Mazda Францем фон
+                                    Хольцхаузеном. <br />
+                                    Имеет съёмную стеклянную крышу и кузов с двумя передними сиденьями плюс
+                                    два небольших сиденья сзади.
                                 </p>
                             </div>
                             <div class="characteristics__column">
                                 <div class="characteristics__number">02</div>
                                 <p class="characteristics__text">
                                     Родстер имеет три электродвигателя, один спереди и два сзади,<br />
-                                    Они обеспечивают полный привод, а также систему адресного распределения крутящего момента для
-                                    лучшего прохождения поворотов.
+                                    Они обеспечивают полный привод, а также систему адресного распределения
+                                    крутящего момента для лучшего прохождения поворотов.
                                 </p>
                             </div>
                         </div>
