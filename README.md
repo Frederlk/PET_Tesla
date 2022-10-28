@@ -1,4 +1,4 @@
-[Tesla](https://pet-marta.web.app/)
+[Tesla](https://pet-tesla.firebaseapp.com/)
 ----------------------------------------------------------------------------
 
 A fully responsive Tesla landing. All elements of the user interaction with the site are animated and create a pleasant feeling of “high cost” when viewing the site, which also positively affects the attitude of potential customers to the company.
@@ -15,7 +15,7 @@ A fully responsive Tesla landing. All elements of the user interaction with the 
 
 ### External Links
 
-*   [Home Page](https://pet-marta.web.app/)
+*   [Home Page](https://pet-tesla.firebaseapp.com/)
 
 ### Built Date
 
